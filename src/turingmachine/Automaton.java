@@ -1,0 +1,57 @@
+package turingmachine;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Automaton {
+	private HashMap<State, ArrayList<Transition>> automaton;
+
+	public Automaton() {
+		this.automaton = new HashMap<State, ArrayList<Transition>>();
+	}
+	
+	
+	public void addTransitionToState(String origin, Transition t) {
+		getAutomaton().get(new State(origin)).add(t);
+	}
+	public ArrayList<Transition> getTransitionsFromState(State state) {
+		return getAutomaton().get(state);
+	}
+	/**
+	 * Verifica si el estado existe en el automata.
+	 * @param state
+	 * @return True si existe.
+	 */
+	public boolean stateExist(String state) {
+		return getAutomaton().containsKey(new State(state));
+	}
+	
+	/**
+	 * Añade un nuevo estado final.
+	 * @param finalState
+	 */
+	public void addFinalState(String finalState) {
+	
+			getAutomaton().keySet().forEach((state)-> {if (state.equals(new State(finalState))) state.setIsFinal(true);});
+	}
+	/**
+	 * Añade un nuevo estado.
+	 * @param newState
+	 */
+	public void addState(String newState){
+		if (getAutomaton().containsKey(new State(newState)))
+			throw new IllegalArgumentException("El estado " + newState + " ya existe.");
+		else
+			getAutomaton().put(new State(newState), new ArrayList<Transition>());		
+	}
+	
+	public HashMap<State, ArrayList<Transition>> getAutomaton() {
+		return automaton;
+	}
+
+	public void setAutomaton(HashMap<State, ArrayList<Transition>> automaton) {
+		this.automaton = automaton;
+	}
+	
+	
+}
