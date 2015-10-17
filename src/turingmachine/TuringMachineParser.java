@@ -33,8 +33,10 @@ public class TuringMachineParser {
 			readInitialState(scanner);
 			readBlankSymbol(scanner);
 			readFinals(scanner);
+			readNumberOfTapes(scanner);
 			/*******/
-			readNextTransition(scanner);
+			while (scanner.hasNextLine())
+				readNextTransition(scanner);
 			
 		}
 		catch(FileNotFoundException e) {
@@ -50,9 +52,21 @@ public class TuringMachineParser {
 		return getMachine();
 	}
 	
+	private static void readNumberOfTapes(Scanner scanner) throws ParsingException {
+		String line = scanner.nextLine();
+		
+		try {
+			getMachine().setNumberOfTapes(new Integer(line));
+		}
+		catch(Exception e) {
+			throw new ParsingException("Error en el numero de cintas.");
+		}
+		
+	}
+
 	public static void readStates(Scanner scanner){
 		String line = scanner.nextLine();
-		String[] states = line.split("\\b");
+		String[] states = line.split(" ");
 		
 		for (int i = 0; i < states.length; i++)
 			getMachine().addState(states[i]);
@@ -60,21 +74,21 @@ public class TuringMachineParser {
 	}
 	public static void readSigma(Scanner scanner) {
 		String line = scanner.nextLine();
-		String[] symbols = line.split("\\b");
+		String[] symbols = line.split(" ");
 		
 		for (int i = 0; i < symbols.length; i++)
 			getMachine().addElementToSigma(symbols[i]);
 	}
 	public static void readTau(Scanner scanner) {
 		String line = scanner.nextLine();
-		String[] symbols = line.split("\\b");
+		String[] symbols = line.split(" ");
 		
 		for (int i = 0; i < symbols.length; i++)
 			getMachine().addElementToTau(symbols[i]);
 	}
 	public static void readInitialState(Scanner scanner) throws ParsingException {
 		String line = scanner.nextLine();
-		String[] states = line.split("\\b");
+		String[] states = line.split(" ");
 		
 		if (states.length > 1)
 			throw new ParsingException("Solo puede haber un estado inicial.");
@@ -88,7 +102,7 @@ public class TuringMachineParser {
 	}
 	public static void readBlankSymbol(Scanner scanner) throws ParsingException {
 		String line = scanner.nextLine();
-		String[] states = line.split("\\b");
+		String[] states = line.split(" ");
 		
 		if (states.length > 1)
 			throw new ParsingException("Solo puede haber un simbolo blanco.");
@@ -98,7 +112,7 @@ public class TuringMachineParser {
 	}
 	public static void readFinals(Scanner scanner) throws ParsingException {
 		String line = scanner.nextLine();
-		String[] states = line.split("\\b");
+		String[] states = line.split(" ");
 		
 		try {
 		for (int i = 0; i < states.length; i++)
@@ -110,7 +124,7 @@ public class TuringMachineParser {
 	}
 	public static void readNextTransition(Scanner scanner) throws ParsingException {
 		String line = scanner.nextLine();
-		String[] symbols = line.split("\\b");
+		String[] symbols = line.split(" ");
 		int tapes = getMachine().getNumberOfTapes();
 		String[] symbolToRead = new String[tapes];
 		String[] symbolToWrite = new String[tapes];

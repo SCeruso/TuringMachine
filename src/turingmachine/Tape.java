@@ -6,11 +6,15 @@ public class Tape {
 	private ArrayList<String> tape;
 	private Integer position;
 	
+	
 	public Tape() {
 		this.tape = new ArrayList<String>();
 		this.position = 0;
 	}
-	
+	public Tape(String input) {
+		this();
+		setInput(input);
+	}
 	public String read() {
 		return getTape().get(getPosition());
 	}
@@ -27,10 +31,10 @@ public class Tape {
 	}
 	
 	public void moveRight() {
+		setPosition(getPosition() + 1);
+		
 		if (getPosition() >= getTape().size()) 
 			getTape().add(TuringMachine.BLANK);
-			
-		setPosition(getPosition() + 1);
 	}
 
 	public void setInput(String input) {

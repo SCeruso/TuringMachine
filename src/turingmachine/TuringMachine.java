@@ -18,12 +18,20 @@ public class TuringMachine {
 	private ArrayList<Tape> tapes;												// Cinta de la máquina.
 	private Integer numberOfTapes;
 	
+	
+	public TuringMachine() {
+		setAutomaton(new Automaton());
+		setSigma(new Alphabet());
+		setTau(new Alphabet());
+		setTapes(new ArrayList<Tape>());
+	}
 	/**
 	 * Evalua la entrada actual.
 	 * @return True si es aceptada.
 	 */
 	public boolean evaluateEntry() {
 		Transition t;
+		setActualState(getStartingState());
 		do {
 			t = getNextTransitionToApply();
 			
@@ -87,7 +95,15 @@ public class TuringMachine {
 	private boolean entryAccepted() {
 		return getActualState().getIsFinal();
 	}
-
+	public String getTapesString() {
+		String result = "";
+		
+		for (int i = 0; i < getNumberOfTapes(); i++) {
+			result += getTapes().get(i).toString() + "/";
+		}
+			
+		return result;
+	}
 	/**
 	 * Verifica si el estado existe en el automata.
 	 * @param state
@@ -144,9 +160,10 @@ public class TuringMachine {
 			throw new IllegalArgumentException("Fallo en las transiciones");
 		
 	
+		
 		transition = new Transition(new State(origin), new State(destiny), symbolsToRead, symbolsToWrite, moves, getNumberOfTapes());
 		
-		getAutomaton().addTransitionToState(origin, transition);
+		getAutomaton().addTransitionToState(transition);
 	}
 	/**
 	 **************************************** Getters y Setters.*********************

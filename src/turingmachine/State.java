@@ -3,7 +3,7 @@ package turingmachine;
 public class State {
 	
 	private String name;
-	private Boolean isFinal;
+	private Boolean isFinal = false;
 	
 	public State(String name) {
 		this.name = name;
@@ -32,4 +32,9 @@ public class State {
 			return true;
 		return false;
 	}
+	@Override
+	public int hashCode() {	
+		return getName().hashCode();
+	}
+	
 }
