@@ -1,5 +1,11 @@
 package turingmachine;
-
+/**
+ * Complejidad computacional.
+ * Universidad de la Laguna.
+ * 
+ * @author Sabato Ceruso.
+ * @email sab7093@gmail..com
+ */
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;

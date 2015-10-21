@@ -1,5 +1,11 @@
 package turingmachine;
-
+/**
+ * Complejidad computacional.
+ * Universidad de la Laguna.
+ * 
+ * @author Sabato Ceruso.
+ * @email sab7093@gmail..com
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -15,7 +21,7 @@ public class TuringMachine {
 	private Alphabet sigma;										// Alfabeto de la cadena de entrada (sigma).	
 	private Alphabet tau;
 	private State startingState;									// Estado inicial.
-	private ArrayList<Tape> tapes;												// Cinta de la máquina.
+	private ArrayList<Tape> tapes;												// Cinta de la mï¿½quina.
 	private Integer numberOfTapes;
 	
 	
@@ -113,21 +119,21 @@ public class TuringMachine {
 		return getAutomaton().stateExist(state);
 	}
 	/**
-	 * Añade un nuevo estado.
+	 * Aï¿½ade un nuevo estado.
 	 * @param newState
 	 */
 	public void addState(String newState){
 		getAutomaton().addState(newState);
 	}
 	/**
-	 * Añade un nuevo estado final.
+	 * Aï¿½ade un nuevo estado final.
 	 * @param finalState
 	 */
 	public void addFinalState(String finalState) {
 		getAutomaton().addFinalState(finalState);
 	}
 	/**
-	 * Añade un nuevo elemento al alfabeto sigma.
+	 * Aï¿½ade un nuevo elemento al alfabeto sigma.
 	 * @param newElement
 	 */
 	public void addElementToSigma(String newElement) {
@@ -141,7 +147,7 @@ public class TuringMachine {
 		getTau().addElementToAlphabet(newElement);
 	}
 	/**
-	 * Añade una nueva transicion.
+	 * Aï¿½ade una nueva transicion.
 	 * @param origin
 	 * @param entryToConsume
 	 * @param stackSymbolToConsume

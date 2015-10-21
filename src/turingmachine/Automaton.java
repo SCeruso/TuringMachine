@@ -1,5 +1,11 @@
 package turingmachine;
-
+/**
+ * Complejidad computacional.
+ * Universidad de la Laguna.
+ * 
+ * @author Sabato Ceruso.
+ * @email sab7093@gmail..com
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -32,7 +38,7 @@ public class Automaton {
 	}
 	
 	/**
-	 * Añade un nuevo estado final.
+	 * Aï¿½ade un nuevo estado final.
 	 * @param finalState
 	 */
 	public void addFinalState(String finalState) {
@@ -41,7 +47,7 @@ public class Automaton {
 	}
 	
 	/**
-	 * Añade un nuevo estado.
+	 * Aï¿½ade un nuevo estado.
 	 * @param newState
 	 */
 	public void addState(String newState){

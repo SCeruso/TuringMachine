@@ -1,5 +1,11 @@
 package turingmachine;
-
+/**
+ * Complejidad computacional.
+ * Universidad de la Laguna.
+ * 
+ * @author Sabato Ceruso.
+ * @email sab7093@gmail..com
+ */
 import java.awt.Color;
 import java.awt.Graphics;
 

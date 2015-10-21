@@ -1,10 +1,11 @@
 package turingmachine;
 
 /**
- * @author Sabato Ceruso.
- * @email sab7093@gmail.com
  * Complejidad computacional.
- * Universidad de la Laguna, España.
+ * Universidad de la Laguna.
+ * 
+ * @author Sabato Ceruso.
+ * @email sab7093@gmail..com
  */
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class Alphabet {
 		setAlphabet(new ArrayList<String>());
 	}
 	/**
-	 * Añade el elemento recibido al alfabeto.
+	 * Aï¿½ade el elemento recibido al alfabeto.
 	 * @param element
 	 */
 	public void addElementToAlphabet(String element) {

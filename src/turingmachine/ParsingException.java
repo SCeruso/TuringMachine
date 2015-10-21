@@ -1,12 +1,12 @@
 package turingmachine;
 
 /**
- * @author Sabato Ceruso.
- * @email sab7093@gmail.com
  * Complejidad computacional.
- * Universidad de la Laguna, España.
+ * Universidad de la Laguna.
+ * 
+ * @author Sabato Ceruso.
+ * @email sab7093@gmail..com
  */
-
 /**
  * Clase encargada de definir un error durante el parsing.
  */

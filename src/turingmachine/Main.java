@@ -3,14 +3,20 @@ package turingmachine;
  * @author Sabato Ceruso.
  * @email sab7093@gmail.com
  * Complejidad computacional.
- * Universidad de la Laguna, España.
+ * Universidad de la Laguna, Espaï¿½a.
  */
 import java.io.IOException;
 
 import javax.swing.JFrame;
 
 public class Main {
-
+	/**
+	 * Complejidad computacional.
+	 * Universidad de la Laguna.
+	 * 
+	 * @author Sabato Ceruso.
+	 * @email sab7093@gmail..com
+	 */
 	public static void main(String[] args) {
 		TuringMachine automaton = null;
 		TuringMachineFrame frame; 
